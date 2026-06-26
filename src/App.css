@@ -203,6 +203,53 @@ h1 {
   filter: saturate(1.08);
 }
 
+.card-dropdown {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 18px;
+  background: rgba(10, 18, 40, 0.72);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.card-dropdown-item {
+  display: block;
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.card-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.explore-card.has-dropdown:hover .card-dropdown,
+.explore-card.has-dropdown:focus-visible .card-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .explore-card:hover .card-glow,
 .explore-card:focus-visible .card-glow {
   opacity: 1;

@@ -38,7 +38,12 @@ const cards = [
     href: CARD_LINKS.figureSkating,
     variant: "split",
     imageIcon: `${import.meta.env.BASE_URL}images/figure-skating.png`,
-    icon: "skate"
+    icon: "skate",
+    dropdown: [
+      { label: "All About Figure Skating", href: "#" },
+      { label: "Learn to Skate Registration", href: "#" },
+      { label: "FS Class Enrollment", href: "#" },
+    ]
   },
   {
     id: "schedule",
@@ -81,8 +86,8 @@ function App() {
 }
 
 function ExploreCard({ card }) {
-  return (
-    <a className={`explore-card ${card.variant}`} href={card.href}>
+  const inner = (
+    <>
       <span className="card-glow" aria-hidden="true" />
 
       <span className="icon-wrap">
@@ -103,6 +108,30 @@ function ExploreCard({ card }) {
       </span>
 
       <span className="card-title">{card.title}</span>
+
+      {card.dropdown && (
+        <div className="card-dropdown" role="menu">
+          {card.dropdown.map((item) => (
+            <a key={item.label} className="card-dropdown-item" href={item.href} role="menuitem">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </>
+  );
+
+  if (card.dropdown) {
+    return (
+      <div className={`explore-card ${card.variant} has-dropdown`} tabIndex="0">
+        {inner}
+      </div>
+    );
+  }
+
+  return (
+    <a className={`explore-card ${card.variant}`} href={card.href}>
+      {inner}
     </a>
   );
 }
