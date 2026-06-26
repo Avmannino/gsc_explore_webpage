@@ -30,7 +30,18 @@ const cards = [
     href: CARD_LINKS.hockey,
     variant: "blue",
     imageIcon: `${import.meta.env.BASE_URL}images/hockey.png`,
-    icon: "hockey"
+    icon: "hockey",
+    dropdown: [
+      { label: "GSC Boys Travel Hockey", href: "#" },
+      { label: "Mite Travel", href: "#" },
+      { label: "Midget Hockey U16/U18", href: "#" },
+      { label: "Spring Hockey", href: "#" },
+      { label: "Important Info", href: "#" },
+      { label: "Elevate Skills Development (TDL)", href: "#" },
+      { label: "Mini Mites", href: "#" },
+      { label: "Stateline Girls Travel Hockey", href: "#" },
+      { label: "Learn to Skate Registration", href: "#" },
+    ]
   },
   {
     id: "figureSkating",
@@ -111,6 +122,7 @@ function ExploreCard({ card }) {
 
       {card.dropdown && (
         <div className="card-dropdown" role="menu">
+          <div className="card-dropdown-title">{card.title}</div>
           {card.dropdown.map((item) => (
             <a key={item.label} className="card-dropdown-item" href={item.href} role="menuitem">
               {item.label}
