@@ -22,7 +22,15 @@ const cards = [
     href: CARD_LINKS.about,
     variant: "red",
     imageIcon: `${import.meta.env.BASE_URL}images/about-gsc.png`,
-    icon: "logo"
+    icon: "logo",
+    dropdown: [
+      { label: "About GSC", href: "#" },
+      { label: "GSC FAQs", href: "#" },
+      { label: "Board of Governors", href: "#" },
+      { label: "Directions to GSC", href: "#" },
+      { label: "Committees", href: "#" },
+      { label: "Admissions Process", href: "#" },
+    ]
   },
   {
     id: "hockey",
@@ -78,7 +86,13 @@ const cards = [
     href: CARD_LINKS.resources,
     variant: "split",
     imageIcon: `${import.meta.env.BASE_URL}images/resources.png`,
-    icon: "logo"
+    icon: "logo",
+    dropdown: [
+      { label: "Club Rules", href: "#" },
+      { label: "Member Code of Conduct", href: "#" },
+      { label: "By Laws", href: "#" },
+      { label: "Financial Policies", href: "#" },
+    ]
   }
 ];
 
