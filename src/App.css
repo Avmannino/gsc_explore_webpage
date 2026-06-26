@@ -56,7 +56,7 @@ a {
   inset: -28px;
   z-index: -3;
   background:
-    url("/images/gsc-background.jpg") center / cover no-repeat,
+    var(--bg-image) center / cover no-repeat,
     radial-gradient(circle at center, #114c9f 0%, #08142e 60%, #020814 100%);
   filter: blur(15px);
   transform: scale(1.08);

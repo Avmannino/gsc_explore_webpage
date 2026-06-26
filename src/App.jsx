@@ -21,7 +21,7 @@ const cards = [
     title: "About GSC",
     href: CARD_LINKS.about,
     variant: "red",
-    imageIcon: "/images/about-gsc.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/about-gsc.png`,
     icon: "logo"
   },
   {
@@ -29,7 +29,7 @@ const cards = [
     title: "Hockey",
     href: CARD_LINKS.hockey,
     variant: "blue",
-    imageIcon: "/images/hockey.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/hockey.png`,
     icon: "hockey"
   },
   {
@@ -37,7 +37,7 @@ const cards = [
     title: "Figure Skating",
     href: CARD_LINKS.figureSkating,
     variant: "split",
-    imageIcon: "/images/figure-skating.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/figure-skating.png`,
     icon: "skate"
   },
   {
@@ -45,7 +45,7 @@ const cards = [
     title: "Schedule",
     href: CARD_LINKS.schedule,
     variant: "red",
-    imageIcon: "/images/schedule.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/schedule.png`,
     icon: "calendar"
   },
   {
@@ -53,7 +53,7 @@ const cards = [
     title: "Teams",
     href: CARD_LINKS.teams,
     variant: "blue",
-    imageIcon: "/images/teams.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/teams.png`,
     icon: "teams"
   },
   {
@@ -61,14 +61,14 @@ const cards = [
     title: "Resources",
     href: CARD_LINKS.resources,
     variant: "split",
-    imageIcon: "/images/resources.png",
+    imageIcon: `${import.meta.env.BASE_URL}images/resources.png`,
     icon: "logo"
   }
 ];
 
 function App() {
   return (
-    <main className="explore-page">
+    <main className="explore-page" style={{"--bg-image": `url(${import.meta.env.BASE_URL}images/gsc-background.jpg)`}}>
       <section className="hero-shell" aria-labelledby="page-title">
         <div className="card-grid" aria-label="Greenwich Skating Club navigation">
           {cards.map((card) => (
