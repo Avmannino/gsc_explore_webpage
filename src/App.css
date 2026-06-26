@@ -278,11 +278,11 @@ h1 {
 }
 
 .icon-wrap {
-  width: min(118px, 55%);
-  height: 106px;
+  width: min(150px, 65%);
+  height: 134px;
   display: grid;
   place-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 .custom-icon {
