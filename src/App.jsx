@@ -1,3 +1,26 @@
+import { useState } from "react";
+
+const TEAM_GROUPS = [
+  { label: "Mite", teams: ["Mite Blue", "Mite Red", "Mite White"] },
+  { label: "Squirt", teams: ["Squirt A", "Squirt A1", "Squirt AA"] },
+  { label: "Peewee", teams: ["Peewee A", "Peewee A1", "Peewee AA"] },
+  { label: "Bantam", teams: ["Bantam A", "Bantam Minor", "Bantam Major"] },
+  { label: "Midget", teams: ["U16 Midget Minor", "U18 Midget Major"] },
+  {
+    label: "CRHL",
+    teams: [
+      "Aces",
+      "Bald Eagles",
+      "Cake Eaters",
+      "Chiefs",
+      "Leftovers",
+      "Nordiques",
+      "Rando",
+      "Rusty Blades",
+    ],
+  },
+];
+
 const CARD_LINKS = {
   about: "#",
   hockey: "#",
@@ -78,7 +101,8 @@ const cards = [
     href: CARD_LINKS.teams,
     variant: "blue",
     imageIcon: `${import.meta.env.BASE_URL}images/teams.png`,
-    icon: "teams"
+    icon: "teams",
+    tabs: TEAM_GROUPS
   },
   {
     id: "resources",
@@ -111,6 +135,9 @@ function App() {
 }
 
 function ExploreCard({ card }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const hasOverlay = card.dropdown || card.tabs;
+
   const inner = (
     <>
       <span className="card-glow" aria-hidden="true" />
@@ -144,10 +171,39 @@ function ExploreCard({ card }) {
           ))}
         </div>
       )}
+
+      {card.tabs && (
+        <div className="card-dropdown team-cabinet" role="menu">
+          <div className="card-dropdown-title">{card.title}</div>
+
+          <div className="team-tab-row" role="tablist" aria-label={`${card.title} age groups`}>
+            {card.tabs.map((tab, index) => (
+              <button
+                key={tab.label}
+                type="button"
+                role="tab"
+                aria-selected={index === activeTab}
+                className={`team-tab${index === activeTab ? " active" : ""}`}
+                onClick={() => setActiveTab(index)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          <div className="team-tab-panel" role="tabpanel">
+            {card.tabs[activeTab].teams.map((team) => (
+              <a key={team} className="card-dropdown-item" href="#">
+                {team}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 
-  if (card.dropdown) {
+  if (hasOverlay) {
     return (
       <div className={`explore-card ${card.variant} has-dropdown`} tabIndex="0">
         {inner}

@@ -262,9 +262,71 @@ h1 {
 }
 
 .explore-card.has-dropdown:hover .card-dropdown,
-.explore-card.has-dropdown:focus-visible .card-dropdown {
+.explore-card.has-dropdown:focus-visible .card-dropdown,
+.explore-card.has-dropdown:focus-within .card-dropdown {
   opacity: 1;
   pointer-events: auto;
+}
+
+.team-cabinet {
+  overflow: visible;
+}
+
+.team-tab-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.team-tab {
+  position: relative;
+  width: 100%;
+  padding: 8px 4px;
+  font-family: "Oswald", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  background: linear-gradient(180deg, rgba(229, 24, 55, 0.45), rgba(184, 17, 41, 0.4));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px 8px 3px 3px;
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.team-tab:hover {
+  background: linear-gradient(180deg, rgba(242, 54, 82, 0.55), rgba(201, 22, 48, 0.5));
+  color: #ffffff;
+}
+
+.team-tab.active {
+  background: #ffffff;
+  color: #b81129;
+  border-color: #ffffff;
+  transform: translateY(-3px);
+  z-index: 2;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.22);
+}
+
+.team-tab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-height: 0;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 .explore-card:hover .card-glow,
