@@ -58,7 +58,7 @@ a {
   background:
     var(--bg-image) center / cover no-repeat,
     radial-gradient(circle at center, #114c9f 0%, #08142e 60%, #020814 100%);
-  filter: blur(15px);
+  filter: blur(8px);
   transform: scale(1.08);
 }
 
