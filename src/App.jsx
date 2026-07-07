@@ -124,6 +124,11 @@ function App() {
   return (
     <main className="explore-page">
       <section className="hero-shell" aria-labelledby="page-title">
+        <div className="ancillary-grid">
+          <a className="explore-card red ancillary-card" href="#">Safesport</a>
+          <a className="explore-card red ancillary-card" href="#">Member Billing Account</a>
+        </div>
+
         <div className="card-grid" aria-label="Greenwich Skating Club navigation">
           {cards.map((card) => (
             <ExploreCard key={card.id} card={card} />

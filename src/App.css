@@ -88,6 +88,24 @@ h1 {
   gap: clamp(28px, 4vw, 54px) clamp(24px, 4vw, 42px);
 }
 
+.ancillary-grid {
+  width: min(1020px, 100%);
+  margin: 0 auto clamp(16px, 2.5vw, 28px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.ancillary-card {
+  min-height: 80px !important;
+  border-radius: 999px !important;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .explore-card {
   position: relative;
   min-height: 340px;
@@ -96,8 +114,8 @@ h1 {
   display: grid;
   place-items: center;
   padding: 26px 18px 24px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28), 0 1px 0 rgba(255, 255, 255, 0.06) inset;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   isolation: isolate;
   transition:
     transform 220ms ease,
@@ -119,17 +137,12 @@ h1 {
   position: absolute;
   inset: 0;
   z-index: -2;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent 36%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.26), transparent 42%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.1));
-  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.18) 100%);
+  backdrop-filter: blur(4px);
 }
 
 .explore-card.red::before {
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 28%),
-    linear-gradient(135deg, rgba(226, 85, 103, 0.88), rgba(179, 24, 48, 0.82));
+  background: linear-gradient(160deg, #6b0d1c 0%, #a81028 55%, #8a0d22 100%);
 }
 
 .explore-card.blue::before {
@@ -158,10 +171,9 @@ h1 {
 
 .explore-card:hover,
 .explore-card:focus-visible {
-  transform: translateY(-8px) scale(1.025);
-  box-shadow: 0 28px 58px rgba(0, 0, 0, 0.44);
-  border-color: rgba(255, 255, 255, 0.46);
-  filter: saturate(1.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38);
+  border-color: rgba(255, 255, 255, 0.22);
 }
 
 .card-dropdown {
