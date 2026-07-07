@@ -59,7 +59,7 @@ const cards = [
     id: "hockey",
     title: "Hockey",
     href: CARD_LINKS.hockey,
-    variant: "blue",
+    variant: "red",
     imageIcon: `${import.meta.env.BASE_URL}images/hockey.png`,
     icon: "hockey",
     dropdown: [
@@ -78,7 +78,7 @@ const cards = [
     id: "figureSkating",
     title: "Figure Skating",
     href: CARD_LINKS.figureSkating,
-    variant: "split",
+    variant: "red",
     imageIcon: `${import.meta.env.BASE_URL}images/figure-skating.png`,
     icon: "skate",
     dropdown: [
@@ -99,7 +99,7 @@ const cards = [
     id: "teams",
     title: "Teams",
     href: CARD_LINKS.teams,
-    variant: "blue",
+    variant: "red",
     imageIcon: `${import.meta.env.BASE_URL}images/teams.png`,
     icon: "teams",
     tabs: TEAM_GROUPS
@@ -108,7 +108,7 @@ const cards = [
     id: "resources",
     title: "Resources",
     href: CARD_LINKS.resources,
-    variant: "split",
+    variant: "red",
     imageIcon: `${import.meta.env.BASE_URL}images/resources.png`,
     icon: "logo",
     dropdown: [
