@@ -174,7 +174,7 @@ h1 {
   gap: 5px;
   padding: 14px 14px;
   overflow-y: auto;
-  background: rgba(10, 18, 40, 0.78);
+  background: #e51837;
   backdrop-filter: blur(14px);
   opacity: 0;
   pointer-events: none;
