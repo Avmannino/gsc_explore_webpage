@@ -265,7 +265,7 @@ h1 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.85);
-  background: linear-gradient(180deg, rgba(229, 24, 55, 0.45), rgba(184, 17, 41, 0.4));
+  background: #03345f;
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px 8px 3px 3px;
   cursor: pointer;
@@ -278,7 +278,7 @@ h1 {
 }
 
 .team-tab:hover {
-  background: linear-gradient(180deg, rgba(242, 54, 82, 0.55), rgba(201, 22, 48, 0.5));
+  background: #054d8f;
   color: #ffffff;
 }
 
