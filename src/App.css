@@ -16,7 +16,7 @@
 
 html {
   min-height: 100%;
-  background: #07152e;
+  background: transparent;
 }
 
 body {
@@ -49,45 +49,6 @@ a {
   isolation: isolate;
 }
 
-/* Background image layer */
-.explore-page::before {
-  content: "";
-  position: absolute;
-  inset: -28px;
-  z-index: -3;
-  background:
-    var(--bg-image) center / cover no-repeat,
-    radial-gradient(circle at center, #114c9f 0%, #08142e 60%, #020814 100%);
-  filter: blur(8px);
-  transform: scale(1.08);
-}
-
-/* Dark gradient/vignette overlay */
-.explore-page::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  background:
-    radial-gradient(circle at 50% 38%, rgba(255, 255, 255, 0.18), transparent 28%),
-    radial-gradient(circle at 32% 52%, rgba(213, 31, 60, 0.32), transparent 34%),
-    radial-gradient(circle at 66% 50%, rgba(13, 78, 166, 0.35), transparent 36%),
-    linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 0.58) 0%,
-      rgba(0, 0, 0, 0.16) 22%,
-      rgba(0, 0, 0, 0.08) 50%,
-      rgba(0, 0, 0, 0.2) 72%,
-      rgba(0, 0, 0, 0.62) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(3, 8, 18, 0.38) 0%,
-      rgba(3, 8, 18, 0.08) 34%,
-      rgba(3, 8, 18, 0.42) 100%
-    );
-  backdrop-filter: blur(2px);
-}
 
 .hero-shell {
   width: min(980px, 100%);

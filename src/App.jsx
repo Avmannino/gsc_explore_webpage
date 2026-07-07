@@ -122,7 +122,7 @@ const cards = [
 
 function App() {
   return (
-    <main className="explore-page" style={{"--bg-image": `url(${import.meta.env.BASE_URL}images/gsc-background.jpg)`}}>
+    <main className="explore-page">
       <section className="hero-shell" aria-labelledby="page-title">
         <div className="card-grid" aria-label="Greenwich Skating Club navigation">
           {cards.map((card) => (
