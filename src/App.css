@@ -82,7 +82,7 @@ h1 {
 .card-grid {
   width: min(1020px, 100%);
   margin: 0 auto;
-  padding-top: 125px;
+  padding-top: 85px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(28px, 4vw, 54px) clamp(24px, 4vw, 42px);
