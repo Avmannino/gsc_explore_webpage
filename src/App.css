@@ -82,7 +82,7 @@ h1 {
 .card-grid {
   width: min(1020px, 100%);
   margin: 0 auto;
-  padding-top: 85px;
+  padding-top: 0;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(28px, 4vw, 54px) clamp(24px, 4vw, 42px);
@@ -90,7 +90,7 @@ h1 {
 
 .ancillary-grid {
   width: min(1020px, 100%);
-  margin: 0 auto clamp(16px, 2.5vw, 28px);
+  margin: 0 auto 16px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(16px, 3vw, 32px);
